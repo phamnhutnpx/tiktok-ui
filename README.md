@@ -1,6 +1,7 @@
 # Project TIKTOK-UI
 - Config overrides webpack
 - Config babelrc
+- Config sass
 
 # Getting Started with Create React App
 
