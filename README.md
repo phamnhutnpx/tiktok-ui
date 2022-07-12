@@ -2,6 +2,7 @@
 - Config overrides webpack
 - Config babelrc
 - Config sass
+- Config react-router-dom
 
 # Getting Started with Create React App
 
