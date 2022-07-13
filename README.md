@@ -3,6 +3,9 @@
 - Config babelrc
 - Config sass
 - Config react-router-dom
+- Config classnames
+
+- Done default layout
 
 # Getting Started with Create React App
 
