@@ -2,19 +2,26 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faEllipsisVertical,
+    faMagnifyingGlass,
+    faPlus,
+    faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PropperWrapper } from '~/components/Propper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const Header = () => {
     const cx = classNames.bind(styles);
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([]);
+            setSearchResult([1, 2, 3]);
         }, 3000);
     }, []);
     return (
@@ -61,9 +68,14 @@ const Header = () => {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    <Button href="https://www.google.com" outlineSecondary>
+                        <FontAwesomeIcon className={cx('icon-upload')} icon={faPlus} />
+                        Upload
+                    </Button>
+                    <Button primary>Log in</Button>
+                    <Button noneStyle>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
+                    </Button>
                 </div>
             </div>
         </header>
