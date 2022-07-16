@@ -11,7 +11,7 @@
     .inner {
         height: 100%;
         width: var(--default-layout-width);
-        padding: 0 20px 0 24px;
+        padding: 0 var(--default-layout-horizontal-spacer);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -83,8 +83,20 @@
             }
         }
         .actions {
-            .icon-upload{
+            .icon-upload {
                 margin-right: 6px;
+            }
+            // Menu
+            .more-btn {
+                margin-left: 24px;
+                font-size: 1.6rem;
+                cursor: pointer;
+                font-style: normal;
+                padding: 0 8px;
+                background-color: transparent;
+            }
+            .menu-item {
+                width: 224px;
             }
         }
     }

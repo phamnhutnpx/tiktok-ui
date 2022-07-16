@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import Tippy from '@tippyjs/react';
+import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+    faCircleQuestion,
     faCircleXmark,
+    faEarthAsia,
     faEllipsisVertical,
+    faKeyboard,
     faMagnifyingGlass,
     faPlus,
     faSpinner,
@@ -15,10 +18,28 @@ import images from '~/assets/images';
 import { Wrapper as PropperWrapper } from '~/components/Propper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from '~/components/Propper/Menu';
 
 const Header = () => {
     const cx = classNames.bind(styles);
     const [searchResult, setSearchResult] = useState([]);
+
+    const MENU_ITEMS = [
+        {
+            icon: <FontAwesomeIcon icon={faEarthAsia} />,
+            title: 'English',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            title: 'Feedback and help',
+            to: '/feedback',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faKeyboard} />,
+            title: 'Keyboard shortcuts',
+        },
+    ];
+
     useEffect(() => {
         setTimeout(() => {
             setSearchResult([1, 2, 3]);
@@ -31,7 +52,7 @@ const Header = () => {
                     <img src={images.logo} alt="NPX-TikTok" />
                 </div>
                 <Tippy
-                    interactive={true}
+                    interactive
                     visible={searchResult.length > 0}
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
@@ -73,9 +94,11 @@ const Header = () => {
                         Upload
                     </Button>
                     <Button primary>Log in</Button>
-                    <Button noneStyle>
-                        <FontAwesomeIcon icon={faEllipsisVertical} />
-                    </Button>
+                    <Menu menuItems={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

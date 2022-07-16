@@ -9,11 +9,12 @@ const Button = ({
     primary = false,
     outline = false,
     outlineSecondary = false,
-    noneStyle = false,
     disabled = false,
     rounded = false,
     small = false,
     large = false,
+    leftIcon,
+    rightIcon,
     className,
     children,
     onClick,
@@ -45,7 +46,6 @@ const Button = ({
         primary,
         outline,
         outlineSecondary,
-        noneStyle,
         disabled,
         rounded,
         small,
@@ -53,7 +53,9 @@ const Button = ({
     });
     return (
         <Comp className={classes} {...props}>
-            <span>{children}</span>
+            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+            <span className={cx('title')}>{children}</span>
+            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );
 };
