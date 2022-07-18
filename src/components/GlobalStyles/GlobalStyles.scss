@@ -5,7 +5,7 @@
     --primary: #fe2c55;
     --black: #000;
     --white: #fff;
-    --text-color: #333;
+    --text-color: #161823;
     --color-secondary: #161823;
     // deafault layout
     --default-layout-header-height: 60px;
@@ -31,10 +31,21 @@ input,
     border: none;
     outline: none;
 }
-button{
+button {
     cursor: pointer;
 }
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+// tooltip tippy
+body .tippy-box {
+    font-size: 1.4rem;
+    background-color: rgba(84, 84, 84, 0.92);
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+}
+.tippy-box[data-placement^='bottom'] > .tippy-arrow {
+    top: -1px;
 }

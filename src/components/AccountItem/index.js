@@ -9,7 +9,7 @@ const AccountItem = () => {
         <div className={cx('wrapper')}>
             <span className={cx('avatar')}>
                 <img
-                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/b22305afa82a6e53438a2d27e511bb06~c5_300x300.webp?x-expires=1657965600&x-signature=zeD7prCJvnXZToSJZ6mhrVm%2F0Fk%3D"
+                    src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/f7ad09c866659e63864480c5446ac401.jpeg?x-expires=1658221200&x-signature=HvrFA1OeVjA8un8BhnYKFRSi6C0%3D"
                     alt="name user"
                 />
             </span>
